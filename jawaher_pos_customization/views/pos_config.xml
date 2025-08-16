@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="pos_customization_form_view">
+        <field name="name">res.config.setting.form.product.price.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_pricing_section']" position="inside">
+
+
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="pos_show_product_sale_price"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="pos_show_product_sale_price" string="Show Product Sale Price"/>
+                        <div class="text-muted">
+                            Show Product Sale Price Below Product Name On POS Screen.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="pos_show_product_barcode_text"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="pos_show_product_barcode_text" string="Show Product Barcode Text"/>
+                        <div class="text-muted">
+                            Show Product Barcode Text Below Product Name On POS Screen.
+                        </div>
+                    </div>
+                </div>
+
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
