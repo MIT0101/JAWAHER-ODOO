@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <t t-name="InheritProductCard" t-inherit="point_of_sale.ProductCard" t-inherit-mode="extension" owl="1">
+        <!-- Insert after product name -->
+        <xpath expr="//div[contains(@class,'product-content')]" position="after">
+            <!-- show only if one of those enabled (show_product_barcode_text or show_product_sale_price) example  env.services.pos.config.pos_show_product_sale_price -->
+            <t t-if="env.services.pos.config.show_product_barcode_text || env.services.pos.config.show_product_sale_price">
+                <div class="product-extra-info d-flex flex-column justify-content-between align-items-start">
+                    <!-- Sale Price  -->
+                    <h3 t-if="env.services.pos.config.show_product_sale_price" class="sale-price fw-bold text-success text-center w-100">
+                        <t t-esc="props.salePrice"/>
+                    </h3>
+                    <!-- Barcode Text (only if exists) -->
+                    <h3 t-if="props.barcodeText &amp;&amp; env.services.pos.config.show_product_barcode_text" class="barcode-text text-muted text-center w-100">
+                        <t t-esc="props.barcodeText"/>
+                    </h3>
+                </div>
+            </t>
+
+        </xpath>
+    </t>
+</odoo>

@@ -1,5 +1,5 @@
 {
-    'name': "Jwawaher POS Customization",
+    'name': "Jawaher POS Customization",
     'version': '18.0.0.0',
     'category': 'Point of Sale',
     'summary': "Module contains customization for Point of Sale in Odoo",
@@ -13,11 +13,17 @@
     """,
     "author": "@JAWAHER/M.Al-Mustafa",
     "website": "http://jawaher.co/",
-    'depends': ['base', 'point_of_sale'],
+    'depends': ['base', 'product', 'point_of_sale'],
     'data': [
         'views/pos_config.xml',
     ],
     'assets': {
+        'point_of_sale._assets_pos': [
+            'jawaher_pos_customization/static/src/app/generic_components/product_card/product_card.js',
+            'jawaher_pos_customization/static/src/app/generic_components/product_card/product_card.xml',
+            'jawaher_pos_customization/static/src/app/screens/product_screen/product_screen.xml',
+
+        ],
     },
     'license': 'OPL-1',
     "auto_install": False,
