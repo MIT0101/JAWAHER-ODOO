@@ -7,7 +7,7 @@ import {ProductCard} from "@point_of_sale/app/generic_components/product_card/pr
 patch(ProductCard, {
     props: {
         ...ProductCard.props,   // keep existing props
-        salePrice: {type: Number, optional: true},
-        barcodeText: { type: Boolean | String, optional: true },
+        salePrice: {type: Number | String, optional: true},
+        barcodeText: {type: Boolean | String, optional: true},
     },
 });

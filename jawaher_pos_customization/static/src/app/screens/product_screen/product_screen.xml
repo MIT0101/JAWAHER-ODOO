@@ -4,8 +4,9 @@
     <t t-name="InheritProductScreen" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension" owl="1">
 
         <xpath expr="//ProductCard" position="attributes">
-            <!-- Pass the new salePrice prop -->
-            <attribute name="salePrice">product.lst_price</attribute>
+            <!-- Pass the new salePrice prop , format using pos.getProductPriceFormatted(product) -->
+            <attribute name="salePrice">pos.getProductPriceFormatted(product)</attribute>
+
             <!-- Pass the new Barcode prop -->
             <attribute name="barcodeText">product.barcode</attribute>
         </xpath>
