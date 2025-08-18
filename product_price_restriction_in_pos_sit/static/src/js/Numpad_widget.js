@@ -10,15 +10,13 @@ patch(PosStore.prototype, {
     async cashierHasPriceControlRights() {
         const hasGroup = await user.hasGroup('product_price_restriction_in_pos_sit.product_price_restriction_in_pos');
         if (hasGroup) {
-            const buttons = document.querySelectorAll('.numpad button');
-            buttons.forEach(button => {
-                if (button.innerText.trim() === "Price") {
-                    button.setAttribute('disabled', true);
-                    button.style.background = "#c7c7c7";
-                    button.style.color = "#a5a1a1";
-                    button.style.cursor = "not-allowed";
-                }
-            });
+            const button = document.querySelector('.numpad-price');
+            if (button) {
+                button.setAttribute('disabled', true);
+                button.style.background = "#c7c7c7";
+                button.style.color = "#a5a1a1";
+                button.style.cursor = "not-allowed";
+            }
         }
 
         // Call the original method

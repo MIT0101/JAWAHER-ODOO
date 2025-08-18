@@ -12,7 +12,7 @@
     'category': 'Point of Sale',
     "version": "18.0.1.0.0",
     'license': u'OPL-1',
-    'author': 'Silent Infotech Pvt. Ltd.',
+    'author': 'Silent Infotech Pvt. Ltd. , Updated by @JAWAHER/M.Al-Mustafa',
     'website': 'https://silentinfotech.com',
     "price": 20.00,
     "currency": "USD",
